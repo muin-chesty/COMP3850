@@ -12,6 +12,10 @@ public class MoveTowardsBagpack : MonoBehaviour
     private Vector2 targetPos;
     private bool isClicked = false;
 
+    public AudioSource audioSource;
+    public AudioClip sfx;
+    public float sfxVolume;
+
     void Start()
     {
         targetPos = target.transform.position;
@@ -20,6 +24,7 @@ public class MoveTowardsBagpack : MonoBehaviour
     private void OnMouseDown()
     {
         isClicked = true;
+        audioSource.PlayOneShot(sfx, sfxVolume);
     }
 
     private void Update()
