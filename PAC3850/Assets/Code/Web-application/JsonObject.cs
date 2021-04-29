@@ -4,8 +4,8 @@
 [Serializable]
 public class JsonObject
 {
-    public string first_name;            // REQUIRED
-    public string last_name;              // REQUIRED
+    public string first_name;                // REQUIRED
+    public string last_name;              // REQUIRED - will be deleted
     public string patientID;             // REQUIRED: THE ID OF THE CHILD
     public string dateOfBirth;          // REQUIRED: DOB OF THE CHILD
 
@@ -23,6 +23,8 @@ public class JsonObject
 
     public string childEndOfGameFeedback;
     public string parentEndOfGameFeedback;
+
+    public bool isComingFromParent;
 
     public bool sitOnLap;
     public bool needParents;

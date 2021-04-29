@@ -9,6 +9,11 @@ public class CollectItem : MonoBehaviour
     public AudioClip sfx;
     public float sfxVolume;
 
+    private void Start()
+    {
+        audioSource.Play();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Instantiate(VFXCollect, transform);
