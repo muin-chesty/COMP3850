@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Parent/ParentMenu.unity
     guid: 27ac8624d9376b0498935fbfae901fc7
+  - enabled: 1
+    path: Assets/Scenes/Parent/FAQ.unity
+    guid: e42cce9e9c4e89f4dbe371fadbff3f00
+  - enabled: 1
+    path: Assets/Scenes/Parent/ASK.unity
+    guid: efc6356e38fa87442b34f0e2d20a0c64
   m_configObjects: {}
