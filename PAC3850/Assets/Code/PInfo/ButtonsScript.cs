@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 public class ButtonsScript : MonoBehaviour
 {
     private const string PARENT_MENU = "ParentMenu";
+    private const int LOWEST_POSSIBLE_ID_LENGTH = 7;
+    private const int ASCII_OF_ZERO = 48;
+    private const int ASCII_OF_NINE = 57;
 
 
     [SerializeField]
@@ -31,6 +34,7 @@ public class ButtonsScript : MonoBehaviour
     private float transitionPauseInSeconds = 1f;     // NUMBER OF SECONDS BEFORE THE NEXT LEVEL LOADS
 
     private bool isLevelComplete = false;
+    
 
     private void Start()
     {
@@ -51,8 +55,8 @@ public class ButtonsScript : MonoBehaviour
                 LoadLevel(PARENT_MENU);
             }
         }
-
-        if(anim.GetBool("isEmpty") == true)
+        // RESETS BACK TO FALSE SO ANIMATION CAN BE TRIGGERED AGAIN
+        if (anim.GetBool("isEmpty") == true)
         {
             timer += Time.deltaTime;
             if(timer >= waitForNSeconds)
@@ -61,7 +65,7 @@ public class ButtonsScript : MonoBehaviour
                 anim.SetBool("isEmpty", false);
             }
         }
-
+        // RESETS BACK TO FALSE SO ANIMATION CAN BE TRIGGERED AGAIN
         if (idAnimator.GetBool("isEmpty") == true)
         {
             timerOne += Time.deltaTime;
@@ -81,10 +85,26 @@ public class ButtonsScript : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    // VALIDATES ID INPUT: LENGTH >=7 AND ALL NUMBERS
+    private bool IsValidInput()
+    {
+        char[] tempId = id.text.ToCharArray();
+        bool isValid = true;
+        for (int i = 0; i < tempId.Length && isValid; i++)
+        {
+            if (tempId[i] < ASCII_OF_ZERO || tempId[i] > ASCII_OF_NINE)
+            {
+                isValid = false;
+            }
+        }
+        return isValid;
+    }
     // THIS FUNCTION SHOULD BE CALLED FROM THE PLAY BUTTON ON PARENT INFO LEVEL
     public void ParentInfoButton()
     {
-        if(firstName.text.Length > 0 && id.text.Length > 0)
+
+        if(firstName.text.Length > 0 && id.text.Length >= LOWEST_POSSIBLE_ID_LENGTH && IsValidInput())
         {
             outroGameObject.SetActive(true);
             isLevelComplete = true;
@@ -97,11 +117,10 @@ public class ButtonsScript : MonoBehaviour
                
             }
 
-            if (id.text.Length <= 0)
+            if (id.text.Length <= 6 || ( IsValidInput() == false))
             {
-                idAnimator.SetBool("isEmpty", true);
-                
 
+                idAnimator.SetBool("isEmpty", true);
             }
         }
         
