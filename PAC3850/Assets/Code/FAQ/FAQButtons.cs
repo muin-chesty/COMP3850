@@ -22,7 +22,16 @@ public class FAQButtons : MonoBehaviour
         isLevelComplete = true;
         levelName = "ParentMenu";
     }
-   
+    public void One()
+    {
+        isLevelComplete = true;
+        levelName = "One";
+    }
+    public void Two()
+    {
+        isLevelComplete = true;
+        levelName = "Two";
+    }
     void Update()
     {
         if (isLevelComplete)

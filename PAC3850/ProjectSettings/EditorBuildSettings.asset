@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Parent/ASK.unity
     guid: efc6356e38fa87442b34f0e2d20a0c64
+  - enabled: 1
+    path: Assets/Scenes/Parent/TOPICS/One.unity
+    guid: 969f2900d149cb248af17e2a53b00dcf
+  - enabled: 1
+    path: Assets/Scenes/Parent/TOPICS/Two.unity
+    guid: e8bccc54f132648438842c6279fa3fe3
   m_configObjects: {}
