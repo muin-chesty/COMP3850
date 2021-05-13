@@ -21,7 +21,7 @@ public class ParentMenu : MonoBehaviour
     public void GoBack()
     {
         isLevelComplete = true;
-        levelName = "ParentMenu";
+        levelName = "PlayAs";
     }
     public void StartFAQ()
     {

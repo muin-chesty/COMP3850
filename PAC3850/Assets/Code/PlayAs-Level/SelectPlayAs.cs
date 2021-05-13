@@ -7,6 +7,8 @@ public class SelectPlayAs : MonoBehaviour
     UnityEngine.UI.Text playAs;
     [SerializeField]
     GameObject outroObject;
+    [SerializeField]
+    GameObject animationObject;
 
     private float initTimer = 0.0f;
     private float initDelay = 0.5f;
@@ -20,15 +22,20 @@ public class SelectPlayAs : MonoBehaviour
     private float levelTimer = 0.0f;
     private float levelDelay = 1f;
     private string levelName = "";
+    private float animationTimer = 0.0f;
+    [SerializeField]
+    private float animationDelay = 1f;
 
     private void Start()
     {
         outroObject.SetActive(false);
+        animationObject.SetActive(false);
     }
     private void Update()
     {
         if(isButtonClicked)
         {
+            animationObject.SetActive(false);
             levelTimer += Time.deltaTime;
             outroObject.SetActive(true);
             if(levelTimer >= levelDelay)
@@ -47,8 +54,14 @@ public class SelectPlayAs : MonoBehaviour
                 {
                     playAs.text += text[index++];
                 }
+              
 
             }
+        }
+        animationTimer += Time.deltaTime;
+        if(animationTimer >= animationDelay)
+        {
+             animationObject.SetActive(true);
         }
 
     }
@@ -56,11 +69,13 @@ public class SelectPlayAs : MonoBehaviour
     {
         isButtonClicked = true;
         levelName = "ChildInfo";
+        animationObject.SetActive(false);
     }
 
     public void LoadParentSection()
     {
         isButtonClicked = true;
         levelName = "ParentInfo";
+        animationObject.SetActive(false);
     }
 }
