@@ -747,7 +747,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 292339069}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.318
+  m_Size: 0.468
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1082,7 +1082,7 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1243870278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1109,19 +1109,16 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Your child will need to attend the Cardiac Preadmission clinic a few days
-    before their operation. The Cardiac Preadmission Clinic is held in the Heart
-    Centre for Children, The Children\u2019s Hospital at Westmead, and provides an
-    opportunity for the team to collect information about your child that will be
-    needed for his/her surgery and use this as a baseline for your child's progress.
-    The clinic also gives families a chance to ask questions about the planned surgery,
-    and become familiar with the hospital environment."
+  m_Text: "What to tell your child about surgery\n\nChildren vary in how much information
+    they need, and how much they are able understand in relation to their surgery.
+    If this is a concern for you, then you can discuss this with the Preadmission
+    Nurse when you are called prior to your preadmission clinic day. \n"
 --- !u!222 &1243870279
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1339,7 +1336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 3.0987566, y: 0}
+  m_AnchoredPosition: {x: -0.00024414062, y: 0}
   m_SizeDelta: {x: 662, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1731121837
@@ -1544,8 +1541,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1404072958}
   m_HandleRect: {fileID: 1404072957}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.79296607
+  m_Value: 1
+  m_Size: 0.99500674
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

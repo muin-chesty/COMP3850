@@ -11,26 +11,99 @@ public class FAQButtons : MonoBehaviour
     [SerializeField]
     private GameObject outroCanvas;
     private string levelName = "";
-   
+
+    [Space]
+    public GameObject bringPanel;
+    public GameObject tellChildPanel;
+    public GameObject accompanyingParentPanel;
+    public GameObject addressPanel;
+    public GameObject supportPanel;
+    public GameObject sickChildPanel;
+
     void Start()
     {
         outroCanvas.SetActive(false);
+        bringPanel.SetActive(false);
+        tellChildPanel.SetActive(false);
+        accompanyingParentPanel.SetActive(false);
+        addressPanel.SetActive(false);
+        supportPanel.SetActive(false);
+        sickChildPanel.SetActive(false);
     }
 
+    public void ActivateSickChildPanel()
+    {
+        sickChildPanel.SetActive(true);
+    }
+
+    public void DeactivateSickChildPanel()
+    {
+        sickChildPanel.SetActive(false);
+    }
+    public void ActivateSupportPanel()
+    {
+        supportPanel.SetActive(true);
+    }
+    public void DisableSupportPanel()
+    {
+        supportPanel.SetActive(false);
+    }
+
+    public void ActivateBringPanel()
+    {
+        bringPanel.SetActive(true);
+    }
+    public void DisableBringPanel()
+    {
+        bringPanel.SetActive(false);
+    }
+
+    public void ActivateAddressPanel()
+    {
+        addressPanel.SetActive(true);
+    }
+    public void DisableAddressPanel()
+    {
+       addressPanel.SetActive(false);
+    }
+
+    public void ActivateAccompanyingParentPanel()
+    {
+        accompanyingParentPanel.SetActive(true);
+    }
+    public void DisableAccompanyingParentPanel()
+    {
+        accompanyingParentPanel.SetActive(false);
+    }
+
+    public void ActivateTellChildPanel()
+    {
+        tellChildPanel.SetActive(true);
+    }
+    public void DisableTellChildPanel()
+    {
+        tellChildPanel.SetActive(false);
+    }
+
+    public void PACDay()
+    {
+        isLevelComplete = true;
+        levelName = "PACDay";
+    }
     public void GoBack()
     {
         isLevelComplete = true;
-        levelName = "ParentMenu";
+        levelName = "Paths";
     }
     public void One()
     {
         isLevelComplete = true;
         levelName = "One";
     }
-    public void Two()
+    public void LoadGettingReady()
     {
         isLevelComplete = true;
-        levelName = "Two";
+        levelName = "GettingReady";
     }
     void Update()
     {

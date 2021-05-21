@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonsScript : MonoBehaviour
 {
-    private const string PARENT_MENU = "ParentMenu";
+    private const string PARENT_MENU = "Paths";
     private const int LOWEST_POSSIBLE_ID_LENGTH = 7;
     private const int ASCII_OF_ZERO = 48;
     private const int ASCII_OF_NINE = 57;
@@ -34,7 +34,7 @@ public class ButtonsScript : MonoBehaviour
     private float transitionPauseInSeconds = 1f;     // NUMBER OF SECONDS BEFORE THE NEXT LEVEL LOADS
 
     private bool isLevelComplete = false;
-    
+    private TouchScreenKeyboard key;
 
     private void Start()
     {
@@ -43,8 +43,20 @@ public class ButtonsScript : MonoBehaviour
         outroGameObject.SetActive(false);
        
     }
+    public void Keyboard()
+    {
+        key = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
+        key.active = true;
+       
+    }
+   
     private void Update()
     {
+       if(key != null && key.active)
+        {
+            Debug.Log(key.active);
+        }
+       
         if(isLevelComplete)
         {
             timerForLevelTranisition += Time.deltaTime;

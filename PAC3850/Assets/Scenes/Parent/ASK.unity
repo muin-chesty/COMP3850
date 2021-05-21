@@ -1789,7 +1789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 4
-  backbuttonDelay: 2
+  backbuttonDelay: 1
   popupCanvas: {fileID: 430501917}
   outroCanvas: {fileID: 475431335}
 --- !u!4 &1317197102

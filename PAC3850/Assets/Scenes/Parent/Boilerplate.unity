@@ -293,7 +293,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1506612979}
-        m_MethodName: LoadGettingReady
+        m_MethodName: Two
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -670,8 +670,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 374376324}
   m_HandleRect: {fileID: 374376323}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.7530434
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1452,7 +1452,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Support Services
+  m_Text: Accompanying Parent
 --- !u!222 &985174821
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1750,8 +1750,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1840573730}
   m_HandleRect: {fileID: 1840573729}
   m_Direction: 0
-  m_Value: 1.4046631
-  m_Size: 0.997449
+  m_Value: 0
+  m_Size: 0.09384588
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1863,7 +1863,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Preparing questions \nto ask on the day"
+  m_Text: Preparing questions to ask on the day
 --- !u!222 &1341339289
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2026,12 +2026,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 1
   outroCanvas: {fileID: 1095827015}
-  bringPanel: {fileID: 0}
-  tellChildPanel: {fileID: 0}
-  accompanyingParentPanel: {fileID: 0}
-  addressPanel: {fileID: 0}
-  supportPanel: {fileID: 0}
-  sickChildPanel: {fileID: 0}
 --- !u!1 &1531240903
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,7 +2158,7 @@ GameObject:
   - component: {fileID: 1550181795}
   - component: {fileID: 1550181794}
   m_Layer: 5
-  m_Name: Support Services
+  m_Name: Accompanying Parent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2710,11 +2704,11 @@ RectTransform:
   m_Father: {fileID: 84836041}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.9046627, y: 0}
-  m_SizeDelta: {x: 784, y: 0}
-  m_Pivot: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 353.61185, y: 0.0000012895}
+  m_SizeDelta: {x: 709.5189, y: 0}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1995371189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2742,14 +2736,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 230
+    m_Left: 0
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 300, y: 140}
-  m_Spacing: {x: 10, y: 5}
+  m_CellSize: {x: 160, y: 140}
+  m_Spacing: {x: 5, y: 5}
   m_Constraint: 0
   m_ConstraintCount: 2

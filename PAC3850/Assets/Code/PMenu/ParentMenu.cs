@@ -23,10 +23,10 @@ public class ParentMenu : MonoBehaviour
         isLevelComplete = true;
         levelName = "PlayAs";
     }
-    public void StartFAQ()
+    public void StartGettingReady()
     {
         isLevelComplete = true;
-        levelName = "FAQ";
+        levelName = "GettingReady";
     }
 
     private void Start()

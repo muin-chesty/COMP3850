@@ -30,13 +30,13 @@ public class Ask : MonoBehaviour
         if (isQuestionSubmitted)
         {
             timer += Time.deltaTime;
-            if(timer >= (delay - 2f))
+            if(timer >= (delay - 1f))
             {
                 outroCanvas.SetActive(true);
             }
             if(timer >=  delay)
             {
-                SceneManager.LoadScene("ParentMenu");
+                SceneManager.LoadScene("Paths");
                 isQuestionSubmitted = false;
                 timer = 0f;
             }
@@ -49,7 +49,7 @@ public class Ask : MonoBehaviour
             {
                 timer = 0f;
                 backButtonClicked = false;
-                SceneManager.LoadScene("ParentMenu");
+                SceneManager.LoadScene("Paths");
             }
         }
     }
