@@ -53,4 +53,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Child/Kaden/HeightAndWeight.unity
     guid: 0c4f7801c0fecfc4c8b73a92a78158b2
+  - enabled: 1
+    path: Assets/Scenes/Child/Muin/X-Ray.unity
+    guid: 57a41b8b7ea8cdf41896cc79e82216f3
+  - enabled: 1
+    path: Assets/Scenes/Child/Muin/2-X-Ray.unity
+    guid: 8728c8b64ef7c40439f17b6211c31918
   m_configObjects: {}
