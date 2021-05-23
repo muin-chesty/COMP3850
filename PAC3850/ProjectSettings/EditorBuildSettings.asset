@@ -59,4 +59,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Child/Muin/2-X-Ray.unity
     guid: 8728c8b64ef7c40439f17b6211c31918
+  - enabled: 1
+    path: Assets/Scenes/Child/Muin/3-X-Ray.unity
+    guid: 3837d18311fcfa84c9b124a96d673496
+  - enabled: 1
+    path: Assets/Scenes/Child/Muin/Pathology.unity
+    guid: 806bead162ec179449681d5e669d98f9
   m_configObjects: {}
