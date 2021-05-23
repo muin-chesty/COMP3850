@@ -47,4 +47,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Parent/PACDay.unity
     guid: fe41d0dc69017e546bbaa56f92284505
+  - enabled: 1
+    path: Assets/Scenes/Child/Muin/Receiption.unity
+    guid: e15ab9794189228459915375c8fb7b04
+  - enabled: 1
+    path: Assets/Scenes/Child/Kaden/HeightAndWeight.unity
+    guid: 0c4f7801c0fecfc4c8b73a92a78158b2
   m_configObjects: {}
