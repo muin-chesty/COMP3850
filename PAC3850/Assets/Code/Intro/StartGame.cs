@@ -18,7 +18,12 @@ public class StartGame : MonoBehaviour
         if(timer >= startsIn)
         {
             timer = 0f;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+          //  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+    }
+
+    private void OnMouseDown()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

@@ -65,4 +65,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Child/Muin/Pathology.unity
     guid: 806bead162ec179449681d5e669d98f9
+  - enabled: 1
+    path: Assets/Scenes/Child/Muin/Cardiology.unity
+    guid: 1600475e7b739a044af5898d0807994a
+  - enabled: 1
+    path: Assets/Scenes/Child/Muin/2-Cardiology.unity
+    guid: d6a7d273ea6b9e04097154cb7004afc8
   m_configObjects: {}
