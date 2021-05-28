@@ -15,6 +15,7 @@ public class MoveTowardsBagpack : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip sfx;
     public float sfxVolume;
+    public GameObject handIcon;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class MoveTowardsBagpack : MonoBehaviour
     private void OnMouseDown()
     {
         isClicked = true;
+        handIcon.SetActive(false);
         audioSource.PlayOneShot(sfx, sfxVolume);
     }
 

@@ -19,7 +19,7 @@ public class InitCustomisationLevel : MonoBehaviour
             if (timer >= startsIn)
             {
                 timer = 0f;
-                SceneManager.LoadScene("CharacterCreator");
+                SceneManager.LoadScene("Level 1-Packing");
                 isClicked = false;
             }
         }

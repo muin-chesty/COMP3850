@@ -8,6 +8,8 @@ public class MyKeyboard : MonoBehaviour
     public List<InputField> inputFields;
     private InputField focusedField;
     public GameObject keyboard;
+
+    
     private string userText;
     private bool isTouchDown = false;
     private float timer = 0.0f;

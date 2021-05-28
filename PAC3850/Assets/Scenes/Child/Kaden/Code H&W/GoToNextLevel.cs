@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoToNextLevel : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class GoToNextLevel : MonoBehaviour
     {
         if (Continue.enabled == true)
         {
-            Debug.Log("LOAD NEXT LEVEL HERE");
+            SceneManager.LoadScene("X-Ray");
         }
     }
 }
