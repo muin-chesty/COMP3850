@@ -87,7 +87,7 @@ public class FeelCardiology : MonoBehaviour
     {
         if(chestChecked && feetChecked && handChecked && tummyChecked)
         {
-            SceneManager.LoadScene("PlayAs");
+            SceneManager.LoadScene("Rewards");
         }
 
         if(isChestClicked)

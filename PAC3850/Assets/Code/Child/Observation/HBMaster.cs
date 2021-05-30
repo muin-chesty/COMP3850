@@ -50,7 +50,7 @@ public class HBMaster : MonoBehaviour
             timer += Time.deltaTime;
             if(timer >= 5f)
             {
-                SceneManager.LoadScene("PlayAs");
+                SceneManager.LoadScene("Anaesthetist");
             }
         }
     }

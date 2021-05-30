@@ -5,98 +5,154 @@ using UnityEngine.SceneManagement;
 
 public class ReceiptionAnimation : MonoBehaviour
 {
-    public GameObject receiptionist;
+  /*  public GameObject receiptionist;
     public GameObject player;
     public GameObject greetings;
     public GameObject hiButton;
     public GameObject playerResponse;
     public GameObject receiptionistResponse;
     public GameObject awesomeButton;
+*/
+    [Header("Greetings Panel")]
+    public GameObject greetingsPanel;
 
-    private float timer = 0.0f;
-    private bool isHiButtonClicked = false;
-    private bool isAwesomeButtonClicked = false;
+    [Space]
     [SerializeField]
     private float delay = 2f;
-    void Start()
+
+    [Header("Parent and Child")]
+    [Space]
+    public GameObject parent;
+    public GameObject child;
+
+    [Header("Response Panel")]
+    [Space]
+    public GameObject responsePanel;
+
+    [Header("Answer from Receiption Panel")]
+    [Space]
+    public GameObject answerPanel;
+
+    [Header("Play Button")]
+    [Space]
+    public GameObject playButton;
+    private bool isPlayClicked = false;
+
+    [Header("Closing Canvas")]
+    public GameObject newClosingCanvas;
+
+    private float timer = 0.0f;
+    private float timeForTransition = 1f;
+    private float timeForParentChild = 6f;
+    private float levelEndTimer = 0.0f;
+
+   
+  
+
+    public void PlayButton()
     {
-        
+      
+        isPlayClicked = true;
+        newClosingCanvas.SetActive(true);
+
     }
 
-    public void HiButton()
-    {
-        isHiButtonClicked = true;
-        timer = 0f;
-    }
-
-    public void AwesomeButton()
-    {
-        isAwesomeButtonClicked = true;
-        timer = 0f;
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if(isHiButtonClicked == false && isAwesomeButtonClicked == false)
+        if(isPlayClicked)
         {
-            timer += Time.deltaTime;
-            if (timer >= delay)
+            levelEndTimer += Time.deltaTime;
+            if(levelEndTimer >= timeForTransition)
             {
-                greetings.SetActive(false);
-                if (timer >= delay + 1f)
-                {
-                    receiptionist.SetActive(false);
-                    if (timer >= delay + 2f)
-                    {
-                        player.SetActive(true);
-                        if (timer >= delay + 3f)
-                        {
-                            hiButton.SetActive(true);
-                            timer = 0f;
-                        }
-
-                    }
-
-                }
-
+                SceneManager.LoadScene("CountFish");
             }
         }
 
-
-        if(isHiButtonClicked)
+        timer += Time.deltaTime;
+        if(timer >= timeForTransition)
         {
-            hiButton.SetActive(false);
-            timer += Time.deltaTime;
-            if(timer >= delay - 1f)
-            {
-                playerResponse.SetActive(true);
-                if(timer >= delay + 2f)
+            greetingsPanel.SetActive(true);
+        }
+        if(timer >= timeForParentChild)
+        {
+            parent.SetActive(true);
+            child.SetActive(true);
+        }
+        if(timer >= ( timeForParentChild + 1f ))
+        {
+            responsePanel.SetActive(true);
+        }
+        if(timer >= (timeForParentChild + timeForParentChild + 1f))
+        {
+            answerPanel.SetActive(true);
+        }
+        if(timer >= ((timeForParentChild * 4) - 2f))
+        {
+            playButton.SetActive(true);
+        }
+
+
+        /*        if(isHiButtonClicked == false && isAwesomeButtonClicked == false)
                 {
-                    playerResponse.SetActive(false);
-                    if(timer >= delay + 3f)
+                    timer += Time.deltaTime;
+                    if (timer >= delay)
                     {
-                        player.SetActive(false);
-                        if(timer >= delay + 4f)
+                        greetings.SetActive(false);
+                        if (timer >= delay + 1f)
                         {
-                            receiptionist.SetActive(true);
-                            if(timer >= delay + 5f)
+                            receiptionist.SetActive(false);
+                            if (timer >= delay + 2f)
                             {
-                                receiptionistResponse.SetActive(true);
-                                if(timer >= delay + 10f)
+                                player.SetActive(true);
+                                if (timer >= delay + 3f)
                                 {
-                                    receiptionistResponse.SetActive(false);
-                                    if(timer >= delay + 11f)
+                                    hiButton.SetActive(true);
+                                    timer = 0f;
+                                }
+
+                            }
+
+                        }
+
+                    }
+                }
+
+
+                if(isHiButtonClicked)
+                {
+                    hiButton.SetActive(false);
+                    timer += Time.deltaTime;
+                    if(timer >= delay - 1f)
+                    {
+                        playerResponse.SetActive(true);
+                        if(timer >= delay + 2f)
+                        {
+                            playerResponse.SetActive(false);
+                            if(timer >= delay + 3f)
+                            {
+                                player.SetActive(false);
+                                if(timer >= delay + 4f)
+                                {
+                                    receiptionist.SetActive(true);
+                                    if(timer >= delay + 5f)
                                     {
-                                        receiptionist.SetActive(false);
-                                        if(timer >= delay + 12f)
+                                        receiptionistResponse.SetActive(true);
+                                        if(timer >= delay + 10f)
                                         {
-                                            player.SetActive(true);
-                                            if(timer >= delay + 13f)
+                                            receiptionistResponse.SetActive(false);
+                                            if(timer >= delay + 11f)
                                             {
-                                                awesomeButton.SetActive(true);
-                                                isHiButtonClicked = false;
-                                                timer = 0f;
+                                                receiptionist.SetActive(false);
+                                                if(timer >= delay + 12f)
+                                                {
+                                                    player.SetActive(true);
+                                                    if(timer >= delay + 13f)
+                                                    {
+                                                        awesomeButton.SetActive(true);
+                                                        isHiButtonClicked = false;
+                                                        timer = 0f;
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -105,16 +161,15 @@ public class ReceiptionAnimation : MonoBehaviour
                         }
                     }
                 }
-            }
-        }
-        if(isAwesomeButtonClicked)
-        {
-            awesomeButton.SetActive(false);
-            timer += Time.deltaTime;
-            if(timer >= delay - 1f)
-            {
-                SceneManager.LoadScene("HeightAndWeight");
-            }
-        }
+                if(isAwesomeButtonClicked)
+                {
+                    awesomeButton.SetActive(false);
+                    timer += Time.deltaTime;
+                    if(timer >= delay - 1f)
+                    {
+                        SceneManager.LoadScene("HeightAndWeight");
+                    }
+                }
+            }*/
     }
 }

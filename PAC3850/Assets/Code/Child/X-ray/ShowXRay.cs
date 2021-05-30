@@ -17,6 +17,6 @@ public class ShowXRay : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene("Pathology");
+        SceneManager.LoadScene("Hallway");
     }
 }
