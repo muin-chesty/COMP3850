@@ -15,6 +15,12 @@ public class Observation : MonoBehaviour
     public GameObject playButton;
     public GameObject chair;
 
+    // -0.99, -1.426
+    public ArmCollision arm;
+    public ForeheadCollision temp;
+    public ObservationCollision wrist;
+    private static int count = 0;
+
 
     private float introTextTimer = 0f;
     private float introTextDelay = 1f;
@@ -28,11 +34,20 @@ public class Observation : MonoBehaviour
     private float sthethoscopePanelDelay = 5f;
 
     private bool isPlayClicked = false;
+    public GameObject OxygenButton;
+    public GameObject peg;
 
-    void Start()
+    private float oxgButtonTimer = 0f;
+    private float oxgButtonDelay = 5f;
+
+
+
+    public Gameplay childScript;
+    public static void AddToCount()
     {
-
+        count++;
     }
+
     public void Play()
     {
         isPlayClicked = true;
@@ -41,10 +56,25 @@ public class Observation : MonoBehaviour
 
     void Update()
     {
-        if(isPlayClicked)
+
+        if((childScript.GetOxygenClicked() == false) && arm.isBPChecked && wrist.isPulseFelt && temp.isTempChecked)
         {
-            child.transform.position =
-                Vector3.MoveTowards(child.transform.position, chair.transform.position, 3f * Time.deltaTime);
+            oxgButtonTimer += Time.deltaTime;
+            if(oxgButtonTimer >= oxgButtonDelay)
+            {
+                OxygenButton.SetActive(true);
+                count = 0;
+                peg.SetActive(true);
+            }
+           
+        }
+        if(isPlayClicked)
+        {   if(chair != null)
+            {
+                child.transform.position =
+               Vector3.MoveTowards(child.transform.position, chair.transform.position, 3f * Time.deltaTime);
+            }
+           
         }
         introTextTimer += Time.deltaTime;
         if (introTextTimer >= introTextDelay)
@@ -55,11 +85,15 @@ public class Observation : MonoBehaviour
         if (introTextTimer >= (introTextDelay + introTextDownTimeAnimationDelay))
         {
             downIntroText.SetActive(false);
-            parent.SetActive(true);
-            child.SetActive(true);
+            
             if(!isPlayClicked)
             {
                 playButton.SetActive(true);
+            }
+            if(playButton.activeSelf == true)
+            {
+                parent.SetActive(true);
+                child.SetActive(true);
             }
            
         }
