@@ -11,7 +11,11 @@ public class StartGame : MonoBehaviour
     [SerializeField]
     private float startsIn = 2f;
 
-
+    private void Start()
+    {
+        Screen.orientation = ScreenOrientation.Landscape;
+        Screen.fullScreen = true;
+    }
     void Update()
     {
         timer += Time.deltaTime;

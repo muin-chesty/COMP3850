@@ -18,8 +18,10 @@ public class MyKeyboard : MonoBehaviour
     void Start()
     {
         keyboard.SetActive(false);
+        
     }
 
+    
     private void OnGUI()
     {
         for (int i = 0; i < inputFields.Count; i++)
@@ -555,8 +557,23 @@ public class MyKeyboard : MonoBehaviour
             focusedField.text += " ";
         }
     }
+    
+    public void MoveCaretRight()
+    {
+        focusedField.caretPosition = inputFields[0].caretPosition + 1;
+    }
+    public void MoveCaretLeft()
+    {
+        focusedField.caretPosition = inputFields[0].caretPosition - 1;
+    }
     void Update()
     {
-
+        timer += Time.deltaTime;
+        if(timer >= 2f)
+        {
+           
+            timer = 0f;
+        }
+       
     }
 }

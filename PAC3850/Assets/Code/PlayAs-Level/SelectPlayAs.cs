@@ -30,6 +30,8 @@ public class SelectPlayAs : MonoBehaviour
     {
         outroObject.SetActive(false);
         animationObject.SetActive(false);
+        Screen.orientation = ScreenOrientation.Landscape;
+        Screen.fullScreen = true;
     }
     private void Update()
     {

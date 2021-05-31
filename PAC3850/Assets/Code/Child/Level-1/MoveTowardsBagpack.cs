@@ -28,20 +28,33 @@ public class MoveTowardsBagpack : MonoBehaviour
         Instantiate(VFXCollect, transform);
         if (gameObject.name == "Water")
         {
-            GateKeeper.count++;
-            water.SetActive(true);
+          
+            if(!water.activeSelf)
+            {
+                GateKeeper.count++;
+                water.SetActive(true);
+            }
+           
             
         }
         if (gameObject.name == "Lunchbox")
         {
-            GateKeeper.count++;
-            lunchBox.SetActive(true);
-            
+            if(!lunchBox.activeSelf)
+            {
+                GateKeeper.count++;
+                lunchBox.SetActive(true);
+
+            }
+
         }
         if (gameObject.name == "Activities")
         {
-            GateKeeper.count++;
-            activityBag.SetActive(true);
+            if(!activityBag.activeSelf)
+            {
+                GateKeeper.count++;
+                activityBag.SetActive(true);
+            }
+            
           
         }
        
