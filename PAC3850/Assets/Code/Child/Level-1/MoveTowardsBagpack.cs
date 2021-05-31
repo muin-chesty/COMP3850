@@ -1,39 +1,57 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 public class MoveTowardsBagpack : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject target;
-    [SerializeField]
-    [Tooltip("The speed at which item will move towards backpack")]
-    private float speed;
-    private Vector2 targetPos;
-    private bool isClicked = false;
+
 
     public AudioSource audioSource;
     public AudioClip sfx;
     public float sfxVolume;
     public GameObject handIcon;
 
-    void Start()
-    {
-        targetPos = target.transform.position;
-    }
+    [Header("Drag Collect VFX")]
+    [Space]
+    public GameObject VFXCollect;
+
+    [Header("Backpack items in the panel")]
+    [Space]
+    public GameObject lunchBox;
+    public GameObject water;
+    public GameObject activityBag;
+
+
 
     private void OnMouseDown()
     {
-        isClicked = true;
-        handIcon.SetActive(false);
         audioSource.PlayOneShot(sfx, sfxVolume);
+        Instantiate(VFXCollect, transform);
+        if (gameObject.name == "Water")
+        {
+            GateKeeper.count++;
+            water.SetActive(true);
+            
+        }
+        if (gameObject.name == "Lunchbox")
+        {
+            GateKeeper.count++;
+            lunchBox.SetActive(true);
+            
+        }
+        if (gameObject.name == "Activities")
+        {
+            GateKeeper.count++;
+            activityBag.SetActive(true);
+          
+        }
+       
     }
 
     private void Update()
     {
-        if(isClicked)
+       /* if(isClicked)
         {
             transform.position = Vector2.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
-        }
+        }*/
     }
 }
