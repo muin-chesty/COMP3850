@@ -29,17 +29,37 @@ public class Animation : MonoBehaviour
     [SerializeField]
     private float sthethoscopePanelDelay = 5f;
 
+    [Space]
+    [Header("Closing Canvas")]
+    public GameObject closingCanvas;
+    private float closingCanvasTimer = 0f;
+    private readonly float closingCanvasDelay = 1.5f;
+    private bool isPlayClicked = false; 
+
     void Start()
     {
         
     }
     public void Play()
     {
-        SceneManager.LoadScene("2-Cardiology");
+        
+        isPlayClicked = true;
     }
    
     void Update()
     {
+        if(isPlayClicked)
+        {
+            closingCanvas.SetActive(true);
+            closingCanvasTimer += Time.deltaTime;
+            if(closingCanvasTimer >=  closingCanvasDelay)
+            {
+                SceneManager.LoadScene("2-Cardiology");
+                isPlayClicked = false; // RESET FOR NOTHING 
+            }
+           
+        }
+
         introTextTimer += Time.deltaTime; 
         if(introTextTimer >= introTextDelay)
         {

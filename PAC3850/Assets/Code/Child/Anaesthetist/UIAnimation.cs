@@ -13,7 +13,7 @@ public class UIAnimation : MonoBehaviour
     private bool endInfoReady = true;
 
     private float gameEndingTimer = 0.0f;
-    private float gameEndDelay = 12f;
+    private float gameEndDelay = 13f;
 
     public GameObject introUpPanel;
     public GameObject introDownPanel;
@@ -55,6 +55,10 @@ public class UIAnimation : MonoBehaviour
     [Header("Win Panel")]
     [Space]
     public GameObject winPanel;
+
+    [Header("Feedback Canvas")]
+    [Space]
+    public GameObject feedbackCanvas;
     void Update()
     {
 
@@ -102,7 +106,9 @@ public class UIAnimation : MonoBehaviour
             }
             if(gameEndingTimer >= gameEndDelay)
             {
-                SceneManager.LoadScene("Cardiology");
+
+                // ACTIVATE FEEDBACK CANVAS
+                feedbackCanvas.SetActive(true);
             }
         }
         if(levelGreetings)
@@ -120,8 +126,7 @@ public class UIAnimation : MonoBehaviour
                     parent.SetActive(true);
                     player.SetActive(true);
                     playButton.SetActive(true);
-                    stethoscope.SetActive(true);
-                    oxygenMask.SetActive(true);
+                    
                 }
             }
         }
@@ -142,6 +147,8 @@ public class UIAnimation : MonoBehaviour
     public void ClickPlayButton()
     {
         playButton.SetActive(false);
+        stethoscope.SetActive(true);
+        oxygenMask.SetActive(true);
         isPlayButtonClicked = true;
     }
     public void ClickStethoscopeButton()

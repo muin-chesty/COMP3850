@@ -17,6 +17,9 @@ public class HBMaster : MonoBehaviour
     [Space]
     public GameObject winPanel;
 
+    [Header("Feedback Canvas")]
+    public GameObject feedbackCanvas;
+
     private float timer = 0f;
     private float delay = 1f;
 
@@ -24,7 +27,7 @@ public class HBMaster : MonoBehaviour
     private bool isLevelCompleted = false;
     void Update()
     {
-        if(finger.oxygenSaturationCompleted && (isHBButtonClicked == false))
+        if(finger.oxygenSaturationCompleted && (isHBButtonClicked == false) && (isLevelCompleted == false))
         {
             timer += Time.deltaTime;
             if(timer >= delay)
@@ -48,9 +51,11 @@ public class HBMaster : MonoBehaviour
         if(isLevelCompleted)
         {
             timer += Time.deltaTime;
-            if(timer >= 5f)
+            if(timer >= 10f)
             {
-                SceneManager.LoadScene("Anaesthetist");
+                // ACTIVATE FEEDBACK
+                feedbackCanvas.SetActive(true);
+               
             }
         }
     }

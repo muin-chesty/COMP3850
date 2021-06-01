@@ -520,6 +520,22 @@ public class MyKeyboard : MonoBehaviour
 
         }
     }
+    public void hifen()
+    {
+        if (focusedField != null)
+        {
+
+            if (caps)
+            {
+                focusedField.text += '-';
+            }
+            else
+            {
+                focusedField.text += '-';
+            }
+
+        }
+    }
     public void Z()
     {
         if (focusedField != null)

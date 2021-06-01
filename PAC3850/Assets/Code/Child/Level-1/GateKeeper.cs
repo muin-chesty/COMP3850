@@ -8,22 +8,36 @@ public class GateKeeper : MonoBehaviour
     public int numOfItems;
     public static int count = 0;
 
-    public GameObject closingCanvas;
+    public GameObject introCanvas;
+    public GameObject playButton;
+    public GameObject coverImage;
 
-    private float timer = 0f;
- 
+
+    public GameObject lunchbox;
+    public GameObject water;
+    public GameObject activity;
+
+    public GameObject feedbackCanvas;
+
+    public void ClickPlayButton()
+    {
+        playButton.SetActive(false);
+        introCanvas.SetActive(true);
+        coverImage.SetActive(false);
+
+
+        water.SetActive(true);
+        activity.SetActive(true);
+        lunchbox.SetActive(true);
+    }
 
     // Update is called once per frame
     void Update()
     {
         if(count >= numOfItems)
         {
-            closingCanvas.SetActive(true);
-            timer += Time.deltaTime;
-            if(timer >= 1.5f)
-            {
-                SceneManager.LoadScene("Receiption");
-            }
+            feedbackCanvas.SetActive(true);
+           
         }
     }
 }

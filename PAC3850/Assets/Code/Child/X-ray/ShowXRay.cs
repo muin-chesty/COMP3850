@@ -8,7 +8,9 @@ public class ShowXRay : MonoBehaviour
     public GameObject xRay;
     public GameObject showButton;
     public GameObject okButton;
-
+    [Header("Feedback Canvas")]
+    [Space]
+    public GameObject feedbackCanvas;
     public void ShowXRayImage()
     {
         xRay.SetActive(true);
@@ -17,6 +19,7 @@ public class ShowXRay : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene("Hallway");
+        feedbackCanvas.SetActive(true);
+      
     }
 }

@@ -9,8 +9,10 @@ public class PartTwoXray : MonoBehaviour
 
     [SerializeField]
     private float speed = 2f;
-    private bool isTakeOffClicked = false;
+    public bool isTakeOffClicked = false;
 
+    public Sprite shirtless;
+    public SpriteRenderer player;
     
     public void TakeOff()
     {
@@ -18,6 +20,9 @@ public class PartTwoXray : MonoBehaviour
         dummyDress.SetActive(true);
         isTakeOffClicked = true;
         takeOffButton.SetActive(false);
+        
+        //player.sprite = shirtless;
+        dummyDress.transform.position = player.transform.position;
 
     }
 

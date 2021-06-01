@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class HallwayButtons : MonoBehaviour
 {
@@ -11,27 +12,56 @@ public class HallwayButtons : MonoBehaviour
     private float timer = 0f;
     private string sceneName = "";
 
+    private static bool isECGClicked = false;
+    private static bool isPathologyClicked = false;
+    private static bool isECHOClicked = false;
+    private static bool isXRayClicked = false;
+    private static bool isHWClicked = false;
+
+
+    [Header("Play All level panel")]
+    [Space]
+    public GameObject playAllLevelPanel;
     public void ECG()
     {
-        
+        isECGClicked = true;
+    }
+    public void ECHO()
+    {
+        isECHOClicked = true;
+    }
+    public void Pathology()
+    {
+        isPathologyClicked = true;
     }
     public void Observation()
     {
-        sceneName = "Observation";
-        isClicked = true;
-        closingCanvas.SetActive(true);
+      /*  if(isECGClicked && isECHOClicked && isHWClicked && isPathologyClicked &&
+            isXRayClicked)
+        {*/
+            sceneName = "Observation";
+            isClicked = true;
+            closingCanvas.SetActive(true);
+      //  }
+       /* else
+        {
+            playAllLevelPanel.SetActive(true);
+        }*/
+     
     }
     public void XRay()
     {
+        isXRayClicked = true;
         sceneName = "X-Ray";
         isClicked = true;
         closingCanvas.SetActive(true);
     }
     public void HeightAndWeight()
     {
-        sceneName = "HeightAndWeight";
-        isClicked = true;
-        closingCanvas.SetActive(true);
+        isHWClicked = true;
+      //  sceneName = "HeightAndWeight";
+      //  isClicked = true;
+       // closingCanvas.SetActive(true);
     }
     void Update()
     {

@@ -5,15 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class FeelCardiology : MonoBehaviour
 {
-    public GameObject chest;
-    public GameObject stethoscope;
+   
+   
     [Space]
-    public GameObject hand;
+    [Header("Body Objects")]
     public GameObject feet;
     public GameObject fingers;
     public GameObject tummy;
-    
+    public GameObject chest;
+    public GameObject stethoscope;
 
+    [Space]
+    [Header("hands")]
+    public GameObject hand;
+    public GameObject handTwo;
+    public GameObject handThree;
     public float speed;
 
     public static Vector3 STETHOSCOPE_INIT_POS;
@@ -29,6 +35,18 @@ public class FeelCardiology : MonoBehaviour
     private bool handChecked = false;
     private bool feetChecked = false;
     private bool tummyChecked = false;
+
+    [Header("Buttons")]
+    [Space]
+    public GameObject tummyButton;
+    public GameObject feetButton;
+    public GameObject handButton;
+    public GameObject chestButton;
+
+    [Header("Feedback Canvas")]
+    [Space]
+    public GameObject feedbackCanvas;
+
     void Start()
     {
         STETHOSCOPE_INIT_POS = stethoscope.transform.position;
@@ -50,18 +68,22 @@ public class FeelCardiology : MonoBehaviour
     public void ChestButton()
     {
         isChestClicked = true;
+        chestButton.SetActive(false);
     }
     public void FeetButton()
     {
         isFeetClicked = true;
+        feetButton.SetActive(false);
     }
     public void FingersButton()
     {
         isHandClicked = true;
+        handButton.SetActive(false);
     }
     public void TummyButton()
     {
         isTummyClicked = true;
+        tummyButton.SetActive(false);
     }
 
     public void HandChecked()
@@ -87,7 +109,9 @@ public class FeelCardiology : MonoBehaviour
     {
         if(chestChecked && feetChecked && handChecked && tummyChecked)
         {
-            SceneManager.LoadScene("Rewards");
+            // ACTIVATE FEEDBACK CANVAS
+            feedbackCanvas.SetActive(true);
+           
         }
 
         if(isChestClicked)
@@ -99,7 +123,7 @@ public class FeelCardiology : MonoBehaviour
         if(isFeetClicked)
         {
        
-            hand.transform.position = Vector2.MoveTowards(hand.transform.position, feet.transform.position, speed * Time.deltaTime);
+            handTwo.transform.position = Vector2.MoveTowards(handTwo.transform.position, feet.transform.position, speed * Time.deltaTime);
         }
         if (isHandClicked)
         {
@@ -109,7 +133,7 @@ public class FeelCardiology : MonoBehaviour
         if (isTummyClicked)
         {
            
-            hand.transform.position = Vector2.MoveTowards(hand.transform.position, tummy.transform.position, speed * Time.deltaTime);
+            handThree.transform.position = Vector2.MoveTowards(handThree.transform.position, tummy.transform.position, speed * Time.deltaTime);
         }
     }
 }

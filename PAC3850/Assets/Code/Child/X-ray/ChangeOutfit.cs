@@ -10,6 +10,7 @@ public class ChangeOutfit : MonoBehaviour
     private Animator anim;
     private float timer = 0f;
     private bool hasChanged = false;
+    public PartTwoXray partTwo;
     
     void Start()
     {
@@ -20,8 +21,16 @@ public class ChangeOutfit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+/*        if(partTwo.isTakeOffClicked)
+        {
+            anim.enabled = false;
+            renderer.sprite = sprites[1];
+            renderer.transform.localScale = Vector3.one;
+        }*/
+        
         if(hasChanged)
         {
+            renderer.sprite = sprites[0];
             timer += Time.deltaTime;
             if(timer >= 1f)
             {
@@ -34,6 +43,7 @@ public class ChangeOutfit : MonoBehaviour
     {
         anim.enabled = false;
         hasChanged = true;
-        renderer.sprite = sprites[0];
+      
+        partTwo.isTakeOffClicked = false;
     }
 }
