@@ -46,8 +46,9 @@ public class ReceiptionAnimation : MonoBehaviour
     private float timeForParentChild = 6f;
     private float levelEndTimer = 0.0f;
 
-   
-  
+    
+
+
 
     public void PlayButton()
     {

@@ -14,6 +14,7 @@ public class ABC : MonoBehaviour
         obj.last_name = "Muin";
         obj.sitOnLap = false;
         obj.needParents = true;
+        //obj.user = new User("","");
        
         if(obj == null)
         {

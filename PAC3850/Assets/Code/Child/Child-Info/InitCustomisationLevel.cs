@@ -9,7 +9,7 @@ public class InitCustomisationLevel : MonoBehaviour
     public float startsIn = 1f;
     private float timer;
     private bool isClicked = false;
-
+    
     private void Update()
     {
         if(isClicked)
@@ -28,5 +28,7 @@ public class InitCustomisationLevel : MonoBehaviour
     public void LoadCustomisationLevel()
     {
         isClicked = true;
+
+        Child.first_name = "Nipun";
     }
 }

@@ -1,31 +1,52 @@
 ﻿using System;
-
+using System.Collections;
 
 [Serializable]
 public class JsonObject
 {
-    public string first_name;                // REQUIRED
-    public string last_name;              // REQUIRED - will be deleted
-    public string patientID;             // REQUIRED: THE ID OF THE CHILD
-    public string dateOfBirth;          // REQUIRED: DOB OF THE CHILD
 
-    public string levelOneFeedback;
-    public string levelTwoFeedback;
-    public string levelThreeFeedback;
-    public string levelFourFeedback;
-    public string levelFiveFeedback;
-
-    public string gameplayDetailsLevelOne;
-    public string gameplayDetailsLevelTwo;
-    public string gameplayDetailsLevelThree;
-    public string gameplayDetailsLevelFour;
-    public string gameplayDetailsLevelFive;
-
-    public string childEndOfGameFeedback;
-    public string parentEndOfGameFeedback;
-
-    public bool isComingFromParent;
-
+    public string first_name;
+    public string last_name;
     public bool sitOnLap;
     public bool needParents;
+  //  public User user;
+
 }
+[Serializable]
+
+// 1-API FOR CHILD
+public static class Child
+{
+    public static string first_name;
+    public static string last_name;
+    public static string id;
+    public static string dob;
+    public static string parent;
+    public static string parentReward;
+    public static string childReward;
+  
+
+}
+// 2- API FOR PARENT
+public static class Parent
+{
+    public static string name;
+    public static string id;
+    public static string question;
+}
+
+// 3 - api
+public class GameData
+{
+    public string sceneName;
+    public string feedback;
+    public string id;
+
+    public GameData(string sName, string fBack)
+    {
+        sceneName = sName;
+        feedback = fBack;
+    }
+   
+}
+

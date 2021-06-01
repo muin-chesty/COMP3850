@@ -34,13 +34,23 @@ public class FeedbackData : MonoBehaviour
 
     public void Relaxed()
     {
+        
         emotionalResponseData = "Relaxed";
         isButtonClicked = true;
+        
     }
     public void Stressed()
     {
         emotionalResponseData = "Stressed";
+      
         isButtonClicked = true;
+        // BACKPACK
+        // SEND ONE GAMEDATA OBJECT 
+
+        // OBSERVATION
+        // SEND ONE GAMEDATA OBJECT
+
+
     }
     public void Okay()
     {
