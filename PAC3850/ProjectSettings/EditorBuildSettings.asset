@@ -84,6 +84,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Child/Muin/Anaesthetist.unity
     guid: 9cc472857a445104f99a50709beef842
   - enabled: 1
+    path: Assets/Scenes/Child/Kaden/ECG1.unity
+    guid: f3a4d5f18fc3a1141bbd11770e9b366e
+  - enabled: 1
+    path: Assets/Scenes/Child/Kaden/ECG2.unity
+    guid: dc5e91e8b6accb7428a9d5994bd2844e
+  - enabled: 1
     path: Assets/Scenes/Child/Muin/Hallway.unity
     guid: 6302a3059cbc7bb4ebd313eefe49de68
   m_configObjects: {}
