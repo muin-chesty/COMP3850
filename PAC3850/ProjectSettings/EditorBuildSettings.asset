@@ -33,6 +33,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Parent/TOPICS/One.unity
     guid: 969f2900d149cb248af17e2a53b00dcf
   - enabled: 1
+    path: Assets/Scenes/Child/Kaden/Pathology4.unity
+    guid: 711a93db1aabce0469d7adc589195002
+  - enabled: 1
+    path: Assets/Scenes/Child/Kaden/Pathology3.unity
+    guid: bad682aad53200d47b3138c6b4d3b802
+  - enabled: 1
     path: Assets/Scenes/Child/Kaden/Echo2.unity
     guid: cf21168318e73d94fab4ccdb7bad4a27
   - enabled: 1
@@ -50,6 +56,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Child/Muin/Receiption.unity
     guid: e15ab9794189228459915375c8fb7b04
+  - enabled: 1
+    path: Assets/Scenes/Child/Kaden/Pathology2.unity
+    guid: f1275d382eb421f43b29538c2c8d75a0
   - enabled: 1
     path: Assets/Scenes/Child/Kaden/HeightAndWeight.unity
     guid: 0c4f7801c0fecfc4c8b73a92a78158b2
