@@ -25,14 +25,23 @@ public class HallwayButtons : MonoBehaviour
     public void ECG()
     {
         isECGClicked = true;
+        sceneName = "ECG1";
+        isClicked = true;
+        closingCanvas.SetActive(true);
     }
     public void ECHO()
     {
         isECHOClicked = true;
+        isClicked = true;
+        sceneName = "Echo1";
+        closingCanvas.SetActive(true);
     }
     public void Pathology()
     {
         isPathologyClicked = true;
+        isClicked = true;
+        sceneName = "Pathology1";
+        closingCanvas.SetActive(true);
     }
     public void Observation()
     {
@@ -59,9 +68,9 @@ public class HallwayButtons : MonoBehaviour
     public void HeightAndWeight()
     {
         isHWClicked = true;
-      //  sceneName = "HeightAndWeight";
-      //  isClicked = true;
-       // closingCanvas.SetActive(true);
+        sceneName = "HeightAndWeight";
+        isClicked = true;
+        closingCanvas.SetActive(true);
     }
     void Update()
     {

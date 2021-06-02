@@ -59,7 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Child/Muin/3-X-Ray.unity
     guid: 3837d18311fcfa84c9b124a96d673496
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Child/Muin/Pathology.unity
     guid: 806bead162ec179449681d5e669d98f9
   - enabled: 1
@@ -92,4 +92,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Child/Muin/Hallway.unity
     guid: 6302a3059cbc7bb4ebd313eefe49de68
+  - enabled: 1
+    path: Assets/Scenes/Child/Kaden/Echo1.unity
+    guid: cbc2d99875d56114c9fed41497e5d02e
+  - enabled: 1
+    path: Assets/Scenes/Child/Kaden/Pathology1.unity
+    guid: 4059346f045da5f4d8ba67a19eb27661
   m_configObjects: {}
