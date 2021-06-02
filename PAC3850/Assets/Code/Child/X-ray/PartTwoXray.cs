@@ -1,43 +1,52 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PartTwoXray : MonoBehaviour
 {
-    public GameObject apron;
+    
     public GameObject dummyDress;
-    public Transform parent;
     public GameObject takeOffButton;
+    public GameObject player;
+    public GameObject apronPanel;
+    public GameObject startXRayButton;
 
     [SerializeField]
     private float speed = 2f;
     public bool isTakeOffClicked = false;
 
-    public Sprite shirtless;
-    public SpriteRenderer player;
-    
+
+    private float timer = 0f;
     public void TakeOff()
     {
-        apron.SetActive(true);
         dummyDress.SetActive(true);
+        player.SetActive(false);
         isTakeOffClicked = true;
         takeOffButton.SetActive(false);
         
-        //player.sprite = shirtless;
-        dummyDress.transform.position = player.transform.position;
-
     }
 
-    void Start()
+    public void StartXray()
     {
-        
+        SceneManager.LoadScene("3-X-Ray");
     }
-
-   
-    void Update()
+    private void Update()
     {
         if(isTakeOffClicked)
         {
-            dummyDress.transform.position = Vector2.MoveTowards(dummyDress.transform.position, parent.position, speed * Time.deltaTime);
-        }
+            timer += Time.deltaTime;
+            if(timer >= 2f)
+            {
+                apronPanel.SetActive(true);
+                if(timer >= 10f)
+                {
+                    startXRayButton.SetActive(true);
+                   // 
+                }
+            }
 
+        }
     }
+
+
+
 }
