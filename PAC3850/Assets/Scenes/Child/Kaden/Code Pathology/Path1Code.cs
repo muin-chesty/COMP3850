@@ -10,6 +10,7 @@ public class Path1Code : MonoBehaviour
     public Renderer standingKid;
     public Renderer sittingKid;
     public Renderer Continue;
+    public Renderer point;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class Path1Code : MonoBehaviour
         standingKid.enabled = false;
         sittingKid.enabled = true;
         Continue.enabled = true;
+        point.enabled = false;
     }
 
     public void nextStage()
