@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StickersOn : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class StickersOn : MonoBehaviour
     public Renderer chestWire;
     public Renderer armWire;
     public Renderer legWire;
+    public Renderer chestPoint;
+    public Renderer armPoint;
+    public Renderer legPoint;
     public Renderer monitorCov1;
     public Renderer monitorCov2;
     public Renderer monitorCov3;
@@ -48,15 +52,26 @@ public class StickersOn : MonoBehaviour
     public void legSticker()
     {
         leg.enabled = true;
+        legPoint.enabled = false;
     }
 
     public void chestSticker()
     {
         chest.enabled = true;
+        chestPoint.enabled = false;
     }
 
     public void armSticker()
     {
         arm.enabled = true;
+        armPoint.enabled = false;
+    }
+
+    public void nextStage()
+    {
+        if(Continue.enabled == true)
+        {
+            SceneManager.LoadScene("Hallway");
+        }
     }
 }

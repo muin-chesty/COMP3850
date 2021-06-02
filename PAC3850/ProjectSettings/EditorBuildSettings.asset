@@ -33,6 +33,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Parent/TOPICS/One.unity
     guid: 969f2900d149cb248af17e2a53b00dcf
   - enabled: 1
+    path: Assets/Scenes/Child/Kaden/Echo2.unity
+    guid: cf21168318e73d94fab4ccdb7bad4a27
+  - enabled: 1
     path: Assets/Scenes/Parent/TOPICS/Two.unity
     guid: e8bccc54f132648438842c6279fa3fe3
   - enabled: 1
@@ -60,7 +63,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Child/Muin/3-X-Ray.unity
     guid: 3837d18311fcfa84c9b124a96d673496
   - enabled: 0
-    path: Assets/Scenes/Child/Muin/Pathology.unity
+    path: 
     guid: 806bead162ec179449681d5e669d98f9
   - enabled: 1
     path: Assets/Scenes/Child/Muin/Cardiology.unity
@@ -92,6 +95,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Child/Muin/Hallway.unity
     guid: 6302a3059cbc7bb4ebd313eefe49de68
+  - enabled: 1
+    path: Assets/Scenes/Child/Kaden/Echo3.unity
+    guid: 2a0cc1b0dc228e040af4c148956549e5
   - enabled: 1
     path: Assets/Scenes/Child/Kaden/Echo1.unity
     guid: cbc2d99875d56114c9fed41497e5d02e
