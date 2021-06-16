@@ -4,14 +4,10 @@ using System;
 [Serializable]
 public class GameData
 {
-    public  string sceneName;
-    public  string feedback;
-    public  string id;
+    public  string screenName;
+    public  string feedBack;
+    public  string patienceID;
 
-    public GameData(string sName, string fBack)
-    {
-        sceneName = sName;
-        feedback = fBack;
-    }
+
 
 }

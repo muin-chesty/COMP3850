@@ -19,6 +19,7 @@ public class MoveTowardsBagpack : MonoBehaviour
     public GameObject lunchBox;
     public GameObject water;
     public GameObject activityBag;
+    public GameObject meficare;
 
 
 
@@ -57,7 +58,19 @@ public class MoveTowardsBagpack : MonoBehaviour
             
           
         }
-       
+
+        if (gameObject.name == "meficare")
+        {
+
+            if (!meficare.activeSelf)
+            {
+                GateKeeper.count++;
+                meficare.SetActive(true);
+            }
+
+
+        }
+
     }
 
     private void Update()

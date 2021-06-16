@@ -1268,6 +1268,7 @@ MonoBehaviour:
   answerPanel: {fileID: 390051180}
   playButton: {fileID: 96431181}
   newClosingCanvas: {fileID: 1722516568}
+  greetingsText: {fileID: 1163156712}
 --- !u!4 &1433032543
 Transform:
   m_ObjectHideFlags: 0

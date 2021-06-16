@@ -60,6 +60,8 @@ public class ButtonsScript : MonoBehaviour
         if(isLevelComplete)
         {
             timerForLevelTranisition += Time.deltaTime;
+            Parent.name = firstName.text;
+            Parent.id = id.text;
             if(timerForLevelTranisition >= transitionPauseInSeconds)
             {
                 timerForLevelTranisition = 0.0f;

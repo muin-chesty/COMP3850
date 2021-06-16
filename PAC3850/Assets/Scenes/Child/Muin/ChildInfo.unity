@@ -3226,6 +3226,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closingTransition: {fileID: 1360140180}
   startsIn: 1
+  firstName: {fileID: 108090150}
+  lastName: {fileID: 60516412}
+  parentName: {fileID: 532692403}
+  DOB: {fileID: 544054797}
+  id: {fileID: 649155796}
 --- !u!4 &606472521
 Transform:
   m_ObjectHideFlags: 0

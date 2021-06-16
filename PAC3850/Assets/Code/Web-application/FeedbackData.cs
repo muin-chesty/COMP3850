@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.Networking;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,7 +14,7 @@ public class FeedbackData : MonoBehaviour
 
     [Header("Current Level name for hospital staff to make sense of")]
     [Tooltip("Write the name of the current level")]
-    public string sceneName;
+    public string screenName;
 
     [Space]
     [Header("Closing Canvas")]
@@ -26,36 +26,79 @@ public class FeedbackData : MonoBehaviour
     [Header("Name of next level")]
     [Tooltip("Drag the name of the level game will go to once gameplay is completed")]
     public string nameOfLevelToGoTo;
-
+    GameData game;
     void Start()
     {
       
     }
 
+    IEnumerator Upload()
+    {
+        string api = "https://comp-3850-demo-server.herokuapp.com/api/gameData/add";
+
+
+        string json = JsonUtility.ToJson(game);
+        Debug.Log(json);
+        UnityWebRequest www = UnityWebRequest.Post(api, json);
+      //  www.SetRequestHeader("Content-Type", "application/json");
+        www.SetRequestHeader("Accept", "application/json");
+        www.uploadHandler.contentType = "application/json";
+        byte[] bytes = System.Text.Encoding.UTF8.GetBytes(json);
+        UploadHandlerRaw uH = new UploadHandlerRaw(bytes);
+        www.uploadHandler = uH;
+        www.SetRequestHeader("Content-Type", "application/json");
+        yield return www.SendWebRequest();
+
+        if (www.isHttpError || www.isNetworkError)
+        {
+            Debug.Log(www.error);
+            Debug.Log(www.downloadHandler.text);
+
+
+        }
+        else
+        {
+
+        }
+
+    }
     public void Relaxed()
     {
-        
         emotionalResponseData = "Relaxed";
         isButtonClicked = true;
+
+        game = new GameData();
+        game.feedBack = emotionalResponseData;
+        game.patienceID = Child.id;
+        game.screenName = screenName;
         
+       
+        StartCoroutine(Upload());
+
     }
     public void Stressed()
     {
         emotionalResponseData = "Stressed";
-      
         isButtonClicked = true;
-        // BACKPACK
-        // SEND ONE GAMEDATA OBJECT 
 
-        // OBSERVATION
-        // SEND ONE GAMEDATA OBJECT
-
-
+        game = new GameData();
+        game.feedBack = emotionalResponseData;
+        game.patienceID = Child.id;
+        game.screenName = screenName;
+        
+        StartCoroutine(Upload());
     }
     public void Okay()
     {
         emotionalResponseData = "Okay";
         isButtonClicked = true;
+
+        game = new GameData();
+        game.feedBack = emotionalResponseData;
+        game.patienceID = Child.id;
+        game.screenName = screenName;
+       
+        StartCoroutine(Upload());
     }
     void Update()
     {

@@ -16,6 +16,7 @@ public class GateKeeper : MonoBehaviour
     public GameObject lunchbox;
     public GameObject water;
     public GameObject activity;
+    public GameObject meficare;
 
     public GameObject feedbackCanvas;
 
@@ -29,6 +30,7 @@ public class GateKeeper : MonoBehaviour
         water.SetActive(true);
         activity.SetActive(true);
         lunchbox.SetActive(true);
+        meficare.SetActive(true);
     }
 
     // Update is called once per frame

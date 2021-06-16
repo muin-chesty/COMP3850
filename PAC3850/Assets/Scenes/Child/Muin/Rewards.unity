@@ -6879,6 +6879,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winPanel: {fileID: 1679084579}
+  parentReward: {fileID: 1293653123}
+  childReward: {fileID: 1965368041}
 --- !u!4 &1288594149
 Transform:
   m_ObjectHideFlags: 0

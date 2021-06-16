@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MyKeyboard : MonoBehaviour
@@ -17,7 +18,11 @@ public class MyKeyboard : MonoBehaviour
     private bool caps = false;
     void Start()
     {
-        keyboard.SetActive(false);
+        if(keyboard != null)
+        {
+            keyboard.SetActive(false);
+        }
+       
         
     }
 

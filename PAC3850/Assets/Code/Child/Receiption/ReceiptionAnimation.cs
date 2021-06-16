@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ReceiptionAnimation : MonoBehaviour
 {
@@ -46,8 +47,12 @@ public class ReceiptionAnimation : MonoBehaviour
     private float timeForParentChild = 6f;
     private float levelEndTimer = 0.0f;
 
-    
+    public Text greetingsText;
 
+    private void Start()
+    {
+        greetingsText.text = "  Receiptionist: Hello " + Child.first_name + "! Welcome to Heart Centre! ";
+    }
 
 
     public void PlayButton()
